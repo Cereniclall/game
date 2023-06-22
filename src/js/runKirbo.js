@@ -5,11 +5,13 @@ import {Ground} from './ground.js';
 import {Background} from './background.js';
 import {Demon2} from './demon2.js';
 import {Ground2} from './ground2.js';
+
 import {Ceiling} from './ceiling.js';
-import {Enemy} from './Enemy.js';
+import {Enemy} from './enemy.js';
 import {Attack} from './attack.js';
 import {Deathfloor} from './deathfloor.js';
 import { Sound } from 'excalibur';
+import {Demon} from "./demon.js";
 
 export class RunKirbo extends Scene {
     scoreLabel;
@@ -28,8 +30,11 @@ export class RunKirbo extends Scene {
         const background = new Background();
         this.add(background);
 
-        const Enemy = new Enemy(this.generateRandomNumber(1500, 3000), 500);
-        this.add(Enemy);
+        const demon = new Demon(this.generateRandomNumber(1500, 3000), 500)
+        this.add(demon);
+
+        const demon2 = new Demon2(this.generateRandomNumber(1500, 3000), 500)
+        this.add(demon2);
 
         this.score = 0;
         this.scoreLabel = new Label({
@@ -52,7 +57,7 @@ export class RunKirbo extends Scene {
 
         // const ceiling = new Ceiling();
         // this.add(ceiling);
-
+        //
         // const deathfloor = new Deathfloor();
         // this.add(deathfloor);
 

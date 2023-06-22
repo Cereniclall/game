@@ -6,8 +6,10 @@ export class Ground extends Actor {
         super({
             width: Resources.Ground.width,
             height: Resources.Ground.height,
-            pos: new Vector(500, 760)
-        })
+            pos: new Vector(500, 700)
+
+        });
+        this.anchor.setTo(0.5,1)
     }
 
     onInitialize(engine) {

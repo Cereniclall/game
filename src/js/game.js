@@ -22,7 +22,7 @@ export class Game extends Engine {
         this.addScene('runKirbo', new RunKirbo());
         this.addScene('gameover', new GameOver());
         this.addScene('pause', new Pause());
-
+        this.showDebug(true);
         this.goToScene('start');
 
 

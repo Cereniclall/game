@@ -12,7 +12,7 @@ export class GameOver extends Scene {
         this.add(gameOverbackground);
 
         const gameOverText = new Label({
-            text: 'You died! Click on the button below to go back to the start screen!',
+            text: 'You died!',
             pos: new Vector(240, 250),
             textAlign: TextAlign.Center,
             color: Color.Yellow,
