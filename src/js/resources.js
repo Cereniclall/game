@@ -1,6 +1,5 @@
 import {ImageSource, Sound, Resource, Loader} from 'excalibur'
 import kirboImage from '../images/kirbo.png'
-
 import kirbo2Image from '../images/kirbo2.png'
 import kirbo3Image from '../images/kirbo3.png'
 import kirbo4Image from '../images/kirbo4.png'
@@ -15,8 +14,8 @@ import attackImage from '../images/attack.png'
 
 const Resources = {
     Kirbo: new ImageSource(kirboImage),
-    BoKatan: new ImageSource(kirbo2Image),
-    HanSolo: new ImageSource(kirbo3Image),
+    Kirbo2: new ImageSource(kirbo2Image),
+    Kirbo3: new ImageSource(kirbo3Image),
     Kirbo4: new ImageSource(kirbo4Image),
     Ground: new ImageSource(groundImage),
     Background: new ImageSource(backgroundImage),

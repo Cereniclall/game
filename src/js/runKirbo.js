@@ -5,12 +5,10 @@ import {Ground} from './ground.js';
 import {Background} from './background.js';
 import {Demon2} from './demon2.js';
 import {Ground2} from './ground2.js';
-
 import {Ceiling} from './ceiling.js';
 import {Enemy} from './enemy.js';
 import {Attack} from './attack.js';
 import {Deathfloor} from './deathfloor.js';
-import { Sound } from 'excalibur';
 import {Demon} from "./demon.js";
 
 export class RunKirbo extends Scene {
@@ -18,7 +16,7 @@ export class RunKirbo extends Scene {
     livesLabel;
     lives;
     demonLives = 5;
-    // scores = [];
+    scores = [];
     player
     game
 
@@ -55,11 +53,11 @@ export class RunKirbo extends Scene {
         const ground2 = new Ground2();
         this.add(ground2);
 
-        // const ceiling = new Ceiling();
-        // this.add(ceiling);
-        //
-        // const deathfloor = new Deathfloor();
-        // this.add(deathfloor);
+        const ceiling = new Ceiling();
+        this.add(ceiling);
+
+        const deathfloor = new Deathfloor();
+        this.add(deathfloor);
 
         this.player = new Kirbo(250, 600);
         this.add(this.player);
@@ -111,8 +109,8 @@ export class RunKirbo extends Scene {
     onPostUpdate(engine, delta) {
         const player = this.actors.find(actor => actor instanceof Kirbo);
         if (engine.input.keyboard.wasPressed(Input.Keys.KeyX)) {
-            console.log('shoot');
-            this.spawnATTACK(this.player.pos.x, this.player.pos.y);
+            console.log('attack');
+            this.spawnAttack(this.player.pos.x, this.player.pos.y);
         }
         if (engine.input.keyboard.wasPressed(Input.Keys.KeyP)) {
             engine.goToScene('pause'); // pause
@@ -134,9 +132,9 @@ export class RunKirbo extends Scene {
 
     }
 
-    spawnATTACK(posX, posY) {
+    spawnAttack(posX, posY) {
         // make and add new attack
-        const attack = new attack(posX, posY);
+        const attack = new Attack(posX, posY);
         this.add(attack);
 
         if (attack.pos.x > 1500) {
@@ -180,12 +178,12 @@ export class RunKirbo extends Scene {
         console.log('reset game');
         localStorage.setItem('scores', JSON.stringify(this.score));
 
-        // this.score = 0;
-        // this.lives = 3;
-        // this.updateScoreLabel();
-        // this.updateLivesLabel();
-        // this.demonLives = 5;
-        // this.add(new Kirbo(250, 600));
+        this.score = 0;
+        this.lives = 3;
+        this.updateScoreLabel();
+        this.updateLivesLabel();
+        this.demonLives = 5;
+        this.add(new Kirbo(250, 600));
 
         this.game.goToScene('gameover');
     }

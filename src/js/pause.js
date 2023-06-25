@@ -11,6 +11,8 @@ import {kirbo3Select} from './kirbo3Select.js';
 import {Kirbo2Select} from './kirbo2Select.js';
 import {KirboSelect} from './kirboSelect.js';
 import {Kirbo4Select} from './kirbo4Select';
+import {Resources} from './resources.js';
+
 
 export class Pause extends Scene {
     game;
@@ -69,7 +71,7 @@ export class Pause extends Scene {
             setSprite(2); // change sprite to 2
         });
 
-        const toggleKirbo3SpriteButton = new Kirbo3Select({
+        const toggleKirbo3SpriteButton = new kirbo3Select({
             pos: new Vector(900, 320),
             width: 200,
             height: 50,
@@ -81,7 +83,7 @@ export class Pause extends Scene {
             }
         );
 
-        const toggleKirbo4FettSpriteButton = new Kirbo4Select({
+        const toggleKirbo4SpriteButton = new Kirbo4Select({
             pos: new Vector(1200, 320),
             width: 200,
             height: 50,
@@ -102,7 +104,7 @@ export class Pause extends Scene {
         this.add(backButton);
 
         backButton.on('pointerup', () => {
-            engine.goToScene('runkirbo'); // Keer terug naar de hoofdscene wanneer de knop wordt ingedrukt
+            engine.goToScene('runKirbo'); // Keer terug naar de hoofdscene wanneer de knop wordt ingedrukt
         });
     }
 

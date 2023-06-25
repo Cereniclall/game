@@ -10,8 +10,8 @@ export class Game extends Engine {
 
     constructor() {
         super({
-            width: 1200,
-            height: 780
+            width: 1400,
+            height: 780,
         });
         this.start(ResourceLoader).then(() => this.startGame());
     }
@@ -22,7 +22,7 @@ export class Game extends Engine {
         this.addScene('runKirbo', new RunKirbo());
         this.addScene('gameover', new GameOver());
         this.addScene('pause', new Pause());
-        this.showDebug(true);
+        // this.showDebug(true);
         this.goToScene('start');
 
 

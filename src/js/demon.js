@@ -10,8 +10,8 @@ export class Demon extends Enemy {
         super({
         })
         this.pos = new Vector(posX, posY);
-        this.scale = new Vector(0.35, 0.35)
-        this.anchor.setTo(0.45,0)
+        this.scale = new Vector(0.1, 0.1)
+        this.anchor.setTo(1,1)
 
 
         // this.on('collisionstart', (event) => this.hitSomething(event));

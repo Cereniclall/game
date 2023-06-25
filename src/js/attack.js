@@ -13,6 +13,9 @@ export class Attack extends Actor {
         this.scale = new Vector(0.5, 0.5)
         this.vel = new Vector(1000, 0);
         this.on('collisionstart', (event) => this.hitSomething(event));
+        this.anchor.setTo(0.5,0.5)
+
+
     }
 
     onInitialize(engine) {

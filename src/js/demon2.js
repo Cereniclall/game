@@ -11,7 +11,7 @@ export class Demon2 extends Enemy {
         })
         this.pos = new Vector(posX, posY);
         this.scale = new Vector(0.20, 0.30)
-        this.anchor.setTo(2, 0)
+        // this.anchor.setTo(1, 1)
     }
 
     onInitialize(engine) {
